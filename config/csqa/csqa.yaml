@@ -1,0 +1,25 @@
+### model
+model_name_or_path: meta-llama/Meta-Llama-3-70B-Instruct
+# model_name_or_path: meta-llama/Meta-Llama-3-8B
+# model_name_or_path: meta-llama/Llama-2-7b-hf
+# model_name_or_path: meta-llama/Llama-2-7b-chat-hf
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+flash_attn: fa2
+### method
+# finetuning_type: lora
+
+### dataset
+task: know/commonsenseqa
+split: devc
+template: fewshot
+lang: en
+n_shot: 0
+
+### output
+save_dir: saves/llama3-70B-Instruct/eval/csqa1
+# save_dir: saves/llama3-8b/eval/csqa0
+# save_dir: saves/llama3-8b-Instruct/eval/csqa
+# save_dir: saves/llama2-7b-chat/eval/csqa
+
+### eval
+batch_size: 4

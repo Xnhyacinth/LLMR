@@ -1,0 +1,24 @@
+### model
+# model_name_or_path: TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T
+model_name_or_path: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+flash_attn: fa2
+### method
+# finetuning_type: lora
+
+### dataset
+task: know/commonsenseqa
+split: devc
+template: fewshot
+lang: en
+n_shot: 0
+
+### output
+save_dir: saves/tinyllama-chat/eval/csqa
+# save_dir: saves/llama3-8b/eval/csqa0
+# save_dir: saves/llama3-8b-Instruct/eval/csqa
+# save_dir: saves/llama2-7b-chat/eval/csqa
+
+### eval
+batch_size: 8

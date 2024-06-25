@@ -1,0 +1,37 @@
+### model
+model_name_or_path: TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T
+# model_name_or_path: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+flash_attn: fa2
+### method
+# finetuning_type: lora
+
+### dataset
+task: know/bbh
+split: all_task_test # all_task_train_right_answer
+template: fewshot #fewshot
+lang: gen_bbh_cot
+n_shot: 2
+
+### output
+save_dir: saves/tinyllama/eval/bbh/gen_vllm_cot_test_2shot
+# save_dir: saves/tinyllama-chat/eval/csqa_vllm_cot
+# save_dir: saves/llama3-8b/eval/csqa0
+# save_dir: saves/llama3-8b-Instruct/eval/csqa
+# save_dir: saves/llama2-7b-chat/eval/csqa
+
+### eval
+batch_size: 8
+gen_chat: True
+vllm: True
+
+### gen
+max_new_tokens: 1024
+do_sample: False
+# temperature: 0.1
+# top_p: 0.75
+temperature: 0.6
+top_p: 0.9
+top_k: 50
+repetition_penalty: 1.0
